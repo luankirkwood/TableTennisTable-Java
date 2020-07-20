@@ -41,6 +41,7 @@ public class FileService {
             for (LeagueRow row : league.getRows()) {
                 writer.write(this.serialiseRow(row) + "\r\n");
             }
+            writer.close();
         }
         catch (IOException e)
         {
