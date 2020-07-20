@@ -3,6 +3,7 @@ package training.tabletennistable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class GameSteps {
@@ -27,14 +28,14 @@ public class GameSteps {
         // Nothing to do - the default league starts with no players
     }
 
-    @Given("I print the league")
+    @When("I print the league")
     public void whenIPrintTheLeague()
     {
         response = app.sendCommand("print");
     }
 
     @Then("I should see {string}")
-    public void thenIShouldSeeThatThereAreNoPlayers(String expected)
+    public void iShouldSeeString(String expected)
     {
         Assert.assertEquals(expected, response);
     }
